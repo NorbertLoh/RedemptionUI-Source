@@ -10,7 +10,7 @@ import {
   Button,
   Form,
   message,
-  Input
+  Input,
 } from 'antd';
 import type { TableProps } from 'antd';
 
@@ -56,7 +56,7 @@ const RedemptionPage: React.FC<{}> = (props) => {
   const [messageApi, contextHolder] = message.useMessage();
 
   const { id } = useParams<RouteParams>();
-
+  const [form] = Form.useForm();
   // get events
   useEffect(() => {
     getEvents()
@@ -90,7 +90,8 @@ const RedemptionPage: React.FC<{}> = (props) => {
           type: 'success',
           content: json.response,
         });
-        getEvents()
+        form.resetFields();
+        getEvents();
       } else if (json.status === 200) {
         messageApi.open({
           type: 'error',
@@ -118,6 +119,7 @@ const RedemptionPage: React.FC<{}> = (props) => {
                 <Space direction="vertical" size="small" style={{ width: "100%" }}>
 
                   <Form
+                    form={form}
                     name="Add New Event"
                     labelCol={{ span: 8 }}
                     wrapperCol={{ span: 16 }}
