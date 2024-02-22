@@ -45,7 +45,7 @@ React was chosen for its ability to create Single Page Applications (SPAs), allo
 I used NestJS during my GIC internship previously and absolutely fell in love with it. NestJS is built on top of express and provides a given structure and guidelines. Furthermore, since Typescript is a strongly typed programming language, NestJS was the perfect choice as it comes loaded with many safety features. One such feature is ensuring information recieved matches the type defined.
 
 ### PostgresSQL
-Initially I started with MySQL as it was one of the more common databases. However, I wanted to host the website so that you will be able to interact with it without having to download everything. Since I found a free provider that allows me to host my web service with their PostgresSQL for free, I decided to move to PostgresSQL
+Initially I started with MySQL as it was one of the more common databases. However, I wanted to host the website so that you will be able to interact with it without having to download everything. Since I found a free provider that allows me to host my web service with their PostgresSQL for free, I decided to move to PostgresSQL.
 
 ## Set up
 If you would like to view the code in the machine,
@@ -76,5 +76,21 @@ You can run Cypress and the e2e test by,
     <img src="./readme/e2etest.gif">
 </p>
 
+You can write similar tests by following this example.
+```TSX
+describe("Test invalid staff file", () => {
+  it("tests adding invalid staff", () => {
+    // arrange
+    cy.viewport(965, 748);
+    cy.visit(config.BASE_URL);
+
+    // act
+    cy.get("#file").selectFile('../redemption-ui/cypress/wrong.csv', {force: true});
+    
+    // assert
+    cy.get("span:nth-of-type(2)").should('have.text', 'Invalid Data!!');
+  });
+});
+```
 
 
