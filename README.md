@@ -3,7 +3,7 @@
 </p>
 
 # Redemption System
-## This is a system built using React, NestJS and PostgresSQL for Govtech's take-home assignment.
+### This is a system built using React, NestJS and PostgresSQL for Govtech's take-home assignment.
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react" alt="react" />
