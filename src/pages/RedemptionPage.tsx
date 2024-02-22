@@ -132,12 +132,12 @@ const RedemptionPage: React.FC<{}> = (props) => {
 										onFinish={onFinish}
 										autoComplete="off"
 									>
-										<Row align={"bottom"} justify={"center"} gutter={[8, 0]}>
+										<Row align={"top"} justify={"center"} gutter={[8, 0]}>
 											<Col md={18} xs={18} sm={18} lg={12}>
 												<Form.Item<FieldType>
 													label="Staff Pass ID"
 													name="staff_pass_id"
-													rules={[{ required: true, message: 'Please input Staff Pass ID!' }]}
+													rules={[{ required: true, message: 'Please input Staff Pass ID!' }, { max: 100, message: 'Staff pass ID cannot be more than 100 characters!' }]}
 												>
 													<Input />
 												</Form.Item>

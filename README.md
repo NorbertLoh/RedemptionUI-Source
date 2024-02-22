@@ -34,6 +34,9 @@
 
 ## Assumptions
 * Staff pass ID includes their position to be unique
+* Staff pass ID will not be longer than 100 characters
+* Team name will not be longer than 45 characters
+* Event name will not be longer than 45 characters
 
 ## Motivation Behind the Design
 Initially, I considered creating a simple program that reads the CSV and allows users to perform actions through the terminal and then write the redemption data in another CSV file. However, I decided that it would not be scalable as the program can only be used on the computer where the program is stored. Similarly, if the system is used during an event where many people might be redeeming things, we cannot have multiple redemption counters.

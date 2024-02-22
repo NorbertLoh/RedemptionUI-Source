@@ -168,7 +168,7 @@ const MainPage: React.FC<{}> = () => {
 								<Row >
 									<Col>
 										<Space direction="vertical" size="small" style={{ display: 'flex' }}>
-											<Modal title="Basic Modal" open={isModalOpen} onCancel={handleCancel} footer={null}>
+											<Modal title="Create New Event" open={isModalOpen} onCancel={handleCancel} footer={null}>
 												<Form
 													name="Add_New_Event"
 													labelCol={{ span: 24 }}
@@ -180,7 +180,7 @@ const MainPage: React.FC<{}> = () => {
 													<Form.Item<FieldType>
 														label="Event Name"
 														name="event_name"
-														rules={[{ required: true, message: 'Please input event name!' }]}
+														rules={[{ required: true, message: 'Please input event name!' }, { max: 45, message: 'Event name cannot be more than 45 characters!' }]}
 													>
 														<Input />
 													</Form.Item>
