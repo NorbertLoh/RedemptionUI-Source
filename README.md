@@ -42,7 +42,7 @@ So I thought, what if I created an interface with React and stored the redemptio
 
 Therefore, I concluded that the best way to do this is to separate the client and server. Therefore, the client will only be in charge of serving the information in an interface to the user, and the server will handle all the business logic.
 
-## Architechture
+## Architecture
 <p align="center">
     <img src="./readme/arch.drawio.png" alt="architecture image">
 </p>
