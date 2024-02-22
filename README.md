@@ -25,15 +25,12 @@
 
 # Web Service and Database Documentation can be seen [here](https://github.com/NorbertLoh/RedemptionAPI).
 
-
-
 ## Technologies Used
 * **Frontend**: React single page application
 * **UI**: Ant Design
 * **Frontend Testing**: Cypress
 * **Backend**: NestJS for REST API
 * **Database**: PostgreSQL for data storage
-
 
 ## Assumptions
 * Staff pass ID includes their position to be unique
