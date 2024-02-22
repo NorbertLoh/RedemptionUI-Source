@@ -7,15 +7,16 @@
 
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react" alt="react" />
-  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs" alt="GitHub repo size" />
-  <img src="https://img.shields.io/badge/Cypress-69D3A7?style=for-the-badge&logo=" alt="GitHub issues" />
-  <img src="https://img.shields.io/badge/PostgresSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="GitHub issues" />
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react" alt="reactlogo" />
+    <img src="https://img.shields.io/badge/Antd-0170FE?style=for-the-badge&logo=antdesign" alt="antdlogo" />
+    <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs" alt="nestjslogo" />
+    <img src="https://img.shields.io/badge/Cypress-69D3A7?style=for-the-badge&logo=" alt="cypress" />
+    <img src="https://img.shields.io/badge/PostgresSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgsqllogo" />
 </p>
 
 <p align="center">
-  <img src="./readme/website.png" alt="react" />
-  <h1 align="center"><a href="https://norbertloh.github.io/RedemptionUI/">Live Demo Here!</a></h1>
+    <img src="./readme/website.png" alt="react" />
+    <h1 align="center"><a href="https://norbertloh.github.io/RedemptionUI/">Live Demo Here!</a></h1>
 </p>
 
 ## Web Service and Database Documentation can be seen [here](https://duckduckgo.com "The best search engine for privacy").
@@ -24,6 +25,7 @@
 
 ## Technologies Used
 * **Frontend**: React single page application
+* **UI**: Ant Design
 * **Frontend Testing**: Cypress
 * **Backend**: NestJS for REST API
 * **Database**: PostgreSQL for data storage
@@ -60,7 +62,7 @@ If you would like to view the code in the machine,
 3. Change `config.ts` accordingly
     ```TSX
     const config = {
-        API_BASE_URL: 'YOUR_API_BASE_URL',
+        API_BASE_URL: "YOUR_API_BASE_URL",
         BASE_URL: "THIS_PROJECT_BASE_URL"
     };
 
