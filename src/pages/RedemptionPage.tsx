@@ -42,13 +42,15 @@ const RedemptionPage: React.FC<{}> = (props) => {
 			title: 'Team Name',
 			dataIndex: 'team_name',
 			key: 'team_name',
-			width: "65%"
+			width: "65%",
+			ellipsis: true
 		},
 		{
 			title: 'Redeemed At',
 			dataIndex: 'redeemed_at',
 			key: 'redeemed_at',
-			width: "35%"
+			width: "35%",
+			ellipsis: true
 		},
 	];
 
@@ -133,7 +135,7 @@ const RedemptionPage: React.FC<{}> = (props) => {
 										autoComplete="off"
 									>
 										<Row align={"top"} justify={"center"} gutter={[8, 0]}>
-											<Col md={18} xs={18} sm={18} lg={12}>
+											<Col md={24} xs={24} sm={24} lg={12}>
 												<Form.Item<FieldType>
 													label="Staff Pass ID"
 													name="staff_pass_id"

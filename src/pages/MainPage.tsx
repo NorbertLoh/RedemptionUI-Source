@@ -37,13 +37,15 @@ const MainPage: React.FC<{}> = () => {
 			title: 'Event Name',
 			dataIndex: 'event_name',
 			key: 'event_id',
-			width: "54%"
+			width: "54%",
+			ellipsis: true
 		},
 		{
 			title: 'Created At',
 			dataIndex: 'created_at',
 			key: 'event_id',
-			width: "26%"
+			width: "26%",
+			ellipsis: true
 		},
 		{
 			title: '',
