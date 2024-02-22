@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-    <img src="./readme/website.png" alt="react" />
+    <img src="./readme/website.png" alt="website" />
     <h1 align="center"><a href="https://norbertloh.github.io/RedemptionUI/">Live Demo Here!</a>
     </h1>
     <p align="center">**Please Note**: This application is hosted on a free web service provider that may become idle after 15 seconds of inactivity. To ensure a smooth user experience, some redemption events have been pre-filled. If you don't see any events initially, please wait for about a minute for the server to restart. Thank you for your patience and understanding!</p>
@@ -38,9 +38,9 @@
 * Staff pass ID includes their position to be unique
 
 ## Motivation Behind the Design
-Initially, I was considering creating a simple program that reads the CSV and allows users to perform actions through the terminal and then write the redemption data in another CSV file. However, I decided that it would not be scalable as the program can only be used on the computer where the program is stored. Similarly, if the system is used during an event where many people might be redeeming things, we cannot have multiple redemption counters.
+Initially, I considered creating a simple program that reads the CSV and allows users to perform actions through the terminal and then write the redemption data in another CSV file. However, I decided that it would not be scalable as the program can only be used on the computer where the program is stored. Similarly, if the system is used during an event where many people might be redeeming things, we cannot have multiple redemption counters.
 
-So I thought, what if I created an interface with React and stored the redemption data in Google Firebase / MongoDB? This brings up another issue where all the storing logic will be stored in the React front-end. Storing application logic in the front-end is also unsafe as it exposes to potential attacks about the system and data model.
+So I thought, what if I created an interface with React and stored the redemption data in Google Firebase / MongoDB? This brings up another issue where all the business logic will be stored in the React frontend. Storing application logic in the front-end is also unsafe as it exposes to potential attacks about the system and data model.
 
 Therefore, I concluded that the best way to do this is to separate the client and server. Therefore, the client will only be in charge of serving the information in an interface to the user, and the server will handle all the business logic.
 
@@ -56,13 +56,14 @@ React was chosen for its ability to create Single Page Applications (SPAs), allo
 I used NestJS during my internship GIC previously and absolutely fell in love with it. NestJS is built on top of express and provides a given structure and guidelines. Furthermore, since Typescript is a strongly typed programming language, NestJS was the perfect choice as it comes loaded with many safety features. One such feature is ensuring information recieved matches the type defined.
 
 ### PostgresSQL
-Initially I started with MySQL as it was one of the more common databases. However, I wanted to host the website so that you will be able to interact with it without having to download everything. Since I found a free provider that allows me to host my web service with their PostgresSQL for free, I decided to move to PostgresSQL.
+Initially I started with MySQL as it was one of the more common databases. However, I wanted to host the website so that you will be able to interact with it without having to download everything. Since, I found a free provider that allows me to host my web service with their PostgresSQL for free, I decided to move to PostgresSQL.
 
 ## Set up
 If you would like to run the client on your machine,
 1. Clone the repository
 2. Install the dependencies using `npm install`
 3. Change `config.ts` accordingly
+   
     ```TSX
     const config = {
         API_BASE_URL: "YOUR_API_BASE_URL",
