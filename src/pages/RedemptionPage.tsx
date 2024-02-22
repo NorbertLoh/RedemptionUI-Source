@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-
 import {
   Space,
   Table,
@@ -13,7 +12,6 @@ import {
   Input,
 } from 'antd';
 import type { TableProps } from 'antd';
-
 import config from '../config'
 
 const { Title } = Typography;
@@ -24,8 +22,6 @@ interface RouteParams {
 }
 
 const RedemptionPage: React.FC<{}> = (props) => {
-
-
   interface DataType {
     redemption_id: number;
     event_id: number;
@@ -54,9 +50,9 @@ const RedemptionPage: React.FC<{}> = (props) => {
 
   const [data, setData] = useState<DataType[] | undefined>(undefined);
   const [messageApi, contextHolder] = message.useMessage();
-
   const { id } = useParams<RouteParams>();
   const [form] = Form.useForm();
+
   // get events
   useEffect(() => {
     getEvents()
@@ -69,7 +65,6 @@ const RedemptionPage: React.FC<{}> = (props) => {
       .catch(error => console.error('Error:', error));
   }
 
-
   const onFinish = async (values: FieldType) => {
     const staff_pass_id = values.staff_pass_id;
     if (id !== undefined) {
@@ -77,6 +72,7 @@ const RedemptionPage: React.FC<{}> = (props) => {
         staff_pass_id: staff_pass_id,
         event_id: parseInt(id)
       }
+
       const response = await fetch(config.API_BASE_URL + "/redemption", {
         method: 'POST',
         body: JSON.stringify(data),
@@ -84,12 +80,14 @@ const RedemptionPage: React.FC<{}> = (props) => {
           'Content-type': 'application/json; charset=UTF-8',
         },
       });
+
       const json = await response.json();
       if (json.status === 201) {
         messageApi.open({
           type: 'success',
           content: json.response,
         });
+
         form.resetFields();
         getEvents();
       } else if (json.status === 200) {
@@ -107,17 +105,14 @@ const RedemptionPage: React.FC<{}> = (props) => {
   };
 
   return (
-
     <Row className="center-row" gutter={[16, 16]} justify="center">
       {contextHolder}
       <Col span={24}>
-
         <Row justify="center">
           <Col md={24} xs={24} sm={24} lg={12}>
             <Row>
               <Col span={24}>
                 <Space direction="vertical" size="small" style={{ width: "100%" }}>
-
                   <Form
                     form={form}
                     name="Add New Event"
@@ -143,14 +138,11 @@ const RedemptionPage: React.FC<{}> = (props) => {
                           </Button>
                         </Form.Item>
                       </Col>
-
                     </Row>
-
                   </Form>
                 </Space>
               </Col>
             </Row>
-
             <Col md={24} xs={24} sm={24} lg={24}>
               <Row>
                 <Col>
@@ -166,7 +158,6 @@ const RedemptionPage: React.FC<{}> = (props) => {
           </Col>
         </Row>
       </Col>
-
     </Row>
   );
 };

@@ -66,7 +66,7 @@ If you would like to view the code in the machine,
 Of course, no software will be complete without automated testing!
 We can create AAA quality tests by following the AAA principle which is, Arrange-Act-Assert.
 
-You run Cypress and the e2e test by,
+You can run Cypress and the e2e test by,
 1. Running `npm run cypress:open` in the root directory
 2. E2E Testing
 3. Select the browser you want to run on

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import {
   Space,
   Table,
@@ -15,17 +14,13 @@ import {
   ConfigProvider
 } from 'antd';
 import type { TableProps } from 'antd';
-
 import {
   GiftOutlined
 } from '@ant-design/icons';
-
 import config from '../config'
 import { useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
-
-
 
 const MainPage: React.FC<{}> = () => {
   interface DataType {
@@ -55,7 +50,6 @@ const MainPage: React.FC<{}> = () => {
       render: (text, record) => (
         <Row justify="center">
           <GiftOutlined className="iconButton" onClick={() => goToEventPage(record.event_id)} />
-
         </Row>
       ),
     },
@@ -70,7 +64,6 @@ const MainPage: React.FC<{}> = () => {
   const [data, setData] = useState<DataType[] | undefined>(undefined);
   const [messageApi, contextHolder] = message.useMessage();
   const [isModalOpen, setIsModalOpen] = useState(false);
-
 
   // get events
   useEffect(() => {
@@ -97,7 +90,7 @@ const MainPage: React.FC<{}> = () => {
     },
     onChange(info: any) {
       if (info.file.status === 'done') {
-        let response = info.file.response
+        let response = info.file.response;
         if (response.status === 201) {
           messageApi.open({
             type: 'success',
@@ -134,13 +127,14 @@ const MainPage: React.FC<{}> = () => {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
+
     const json = await response.json();
     if (json.status === 201) {
       messageApi.open({
         type: 'success',
         content: 'Event created successfully!!',
       });
-      getEvents()
+      getEvents();
       handleCancel();
     }
   };
@@ -158,7 +152,6 @@ const MainPage: React.FC<{}> = () => {
       <Row className="center-row" justify="center">
         {contextHolder}
         <Col span={24}>
-
           <Row justify="center">
             <Col md={24} xs={24} sm={24} lg={12}>
               <Space direction="vertical" size="small" style={{ display: 'flex' }}>
@@ -188,13 +181,11 @@ const MainPage: React.FC<{}> = () => {
                               </Button>
                             </Form.Item>
                           </Row>
-
                         </Form>
                       </Modal>
                     </Space>
                   </Col>
                 </Row>
-
                 <Col md={24} xs={24} sm={24} lg={24}>
                   <Row gutter={[8, 8]} align={"middle"} className="title">
                     <Col xs={24} sm={14} md={14} lg={14}>
@@ -227,7 +218,6 @@ const MainPage: React.FC<{}> = () => {
             </Col>
           </Row>
         </Col>
-
       </Row>
     </ConfigProvider>
   );
