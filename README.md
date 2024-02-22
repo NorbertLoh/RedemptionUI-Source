@@ -5,6 +5,7 @@
 # Redemption System
 ### This is a system built using React, NestJS and PostgresSQL for Govtech's take-home assignment.
 
+
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react" alt="react" />
   <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs" alt="GitHub repo size" />
@@ -17,6 +18,7 @@
   <h1 align="center"><a href="https://norbertloh.github.io/RedemptionUI/">Live Demo Here!</a></h1>
 </p>
 
+## Web Service and Database Documentation can be seen [here](https://duckduckgo.com "The best search engine for privacy").
 
 
 
@@ -25,6 +27,10 @@
 * **Frontend Testing**: Cypress
 * **Backend**: NestJS for REST API
 * **Database**: PostgreSQL for data storage
+
+
+## Assumptions
+* Staff pass ID includes their position to be unique
 
 ## Motivation Behind the Design
 Initially, I was considering creating a simple program that reads the CSV and allows users to perform actions through the terminal and then write the redemption data in another CSV file. However, I decided that it would not be scalable as the program can only be used on the computer where the program is stored. Similarly, if the system is used during an event where many people might be redeeming things, we cannot have multiple redemption counters.
