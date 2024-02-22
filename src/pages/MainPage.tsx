@@ -197,11 +197,11 @@ const MainPage: React.FC<{}> = () => {
 
                 <Col md={24} xs={24} sm={24} lg={24}>
                   <Row gutter={[8, 8]} align={"middle"} className="title">
-                    <Col md={24} xs={24} sm={14} lg={14}>
+                    <Col xs={24} sm={14} md={14} lg={14}>
                       <Title style={{ margin: 0 }} >Redemption Events</Title>
                     </Col>
-                    <Col md={24} xs={24} sm={10} lg={10} >
-                      <Row className="titleButtons" gutter={[8, 0]}>
+                    <Col xs={24} sm={10} md={10} lg={10} >
+                      <Row className="titleButtons" gutter={[8, 8]}>
                         <Col>
                           <Upload {...upload} showUploadList={false}>
                             <Button type="primary">

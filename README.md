@@ -1,46 +1,80 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="./readme/present.png" alt="react" />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Redemption System
+## This is a system built using React, NestJS and PostgresSQL for Govtech's take-home assignment.
 
-## Available Scripts
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react" alt="react" />
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs" alt="GitHub repo size" />
+  <img src="https://img.shields.io/badge/Cypress-69D3A7?style=for-the-badge&logo=" alt="GitHub issues" />
+  <img src="https://img.shields.io/badge/PostgresSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="GitHub issues" />
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  <img src="./readme/website.png" alt="react" />
+  <h1 align="center"><a href="https://norbertloh.github.io/RedemptionUI/">Live Demo Here!</a></h1>
+</p>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Technologies Used
+* **Frontend**: React single page application
+* **Frontend Testing**: Cypress
+* **Backend**: NestJS for REST API
+* **Database**: PostgreSQL for data storage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Motivation Behind the Design
+Initially, I was considering creating a simple program that reads the CSV and allows users to perform actions through the terminal and then write the redemption data in another CSV file. However, I decided that it would not be scalable as the program can only be used on the computer where the program is stored. Similarly, if the system is used during an event where many people might be redeeming things, we cannot have multiple redemption counters.
 
-### `npm run build`
+So I thought, what if I created an interface with React and stored the redemption data in Google Firebase / MongoDB? This brings up another issue where all the storing logic will be stored in the React front-end. Storing application logic in the front-end is also unsafe as it exposes to potential attacks about the system and data model.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Therefore, I concluded that the best way to do this is to separate the client and server. Therefore, the client will only be in charge of serving the information in an interface to the user, and the server will handle all the business logic.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Architechture
+<p align="center">
+    <img src="./readme/arch.drawio.png" alt="architecture image">
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### React
+React was chosen for its ability to create Single Page Applications (SPAs), allowing for data and UI updates without full page reloads. TypeScript was used to handle all the API calls within each component.
 
-### `npm run eject`
+### NestJS
+I used NestJS during my GIC internship previously and absolutely fell in love with it. NestJS is built on top of express and provides a given structure and guidelines. Furthermore, since Typescript is a strongly typed programming language, NestJS was the perfect choice as it comes loaded with many safety features. One such feature is ensuring information recieved matches the type defined.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### PostgresSQL
+Initially I started with MySQL as it was one of the more common databases. However, I wanted to host the website so that you will be able to interact with it without having to download everything. Since I found a free provider that allows me to host my web service with their PostgresSQL for free, I decided to move to PostgresSQL
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Set up
+If you would like to view the code in the machine,
+1. Clone the repository
+2. Install the dependencies using `npm install`
+3. Change `config.ts` accordingly
+    ```TSX
+    const config = {
+        API_BASE_URL: 'YOUR_API_BASE_URL',
+        BASE_URL: "THIS_PROJECT_BASE_URL"
+    };
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    export default config;
+    ```
+4. Start the frontend application locally using `npm run start`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Testing
+Of course, no software will be complete without automated testing!
+We can create AAA quality tests by following the AAA principle which is, Arrange-Act-Assert.
 
-## Learn More
+You run Cypress and the e2e test by,
+1. Running `npm run cypress:open` in the root directory
+2. E2E Testing
+3. Select the browser you want to run on
+4. Select `spec.cy.ts` or any test you want to run
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="center">
+    <img src="./readme/e2etest.gif">
+</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+

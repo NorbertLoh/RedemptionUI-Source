@@ -24,7 +24,7 @@ describe("Add new event", () => {
   it("tests addnewevent", () => {
     cy.viewport(965, 748);
     cy.visit(config.BASE_URL);
-    cy.get("div:nth-of-type(2) span").click();
+    cy.get(":nth-child(2) > .ant-btn").click();
     cy.get("#Add_New_Event_event_name").click();
     cy.get("#Add_New_Event_event_name").type("Christmas!");
     cy.get("div.ant-modal-body span").click();
@@ -42,8 +42,8 @@ describe("Should say redeemed", () => {
 
     cy.get("#Add\\ New\\ Event_staff_pass_id").click();
     cy.get("#Add\\ New\\ Event_staff_pass_id").type("BOSS_009QX26MBQLT");
-    cy.get("span").click();
-    cy.get(".ant-message-notice-content").should('have.text', 'Team GRYFFINDOR redeemed successfully!!');
+    cy.get(".ant-btn > span").click();
+    cy.get(".ant-message-custom-content > :nth-child(2)").should('have.text', 'Team GRYFFINDOR redeemed successfully!!');
     cy.get("td:nth-of-type(1)").should('have.text', 'GRYFFINDOR');
   });
 });
