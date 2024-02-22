@@ -69,6 +69,7 @@ const MainPage: React.FC<{}> = () => {
 	const [data, setData] = useState<DataType[] | undefined>(undefined);
 	const [messageApi, contextHolder] = message.useMessage();
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [form] = Form.useForm();
 
 	// Get events on load.
 	useEffect(() => {
@@ -124,6 +125,7 @@ const MainPage: React.FC<{}> = () => {
 	};
 
 	const handleCancel = () => {
+		form.resetFields();
 		setIsModalOpen(false);
 	};
 
@@ -172,6 +174,7 @@ const MainPage: React.FC<{}> = () => {
 										<Space direction="vertical" size="small" style={{ display: 'flex' }}>
 											<Modal title="Create New Event" open={isModalOpen} onCancel={handleCancel} footer={null}>
 												<Form
+													form={form}
 													name="Add_New_Event"
 													labelCol={{ span: 24 }}
 													wrapperCol={{ span: 24 }}
