@@ -50,10 +50,6 @@ function App() {
             items={items1}
           />
         </Header>
-
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Routes>
           <Route path="/" Component={MainPage} />
           <Route path="/events/:id" Component={RedemptionPage} />
