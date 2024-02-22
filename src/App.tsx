@@ -7,27 +7,27 @@ import {
 
 import MainPage from "./pages/MainPage";
 import RedemptionPage from "./pages/RedemptionPage";
-import { Breadcrumb, Layout, Menu, theme, ConfigProvider } from 'antd';
+import { Layout, Menu, ConfigProvider } from 'antd';
 import type { MenuProps } from 'antd';
 
 import { HomeOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header } = Layout;
 
 
 function App() {
   const navigate = useNavigate();
 
+  // Navbar home button redirect.
   const goHome = () => {
     return navigate(`/`);
   }
 
   const items1: MenuProps['items'] = [{
     key: 1,
-    icon: <HomeOutlined onClick={goHome} style={{ fontSize: 18, color:"white" }} />,
-
+    icon: <HomeOutlined onClick={goHome} style={{ fontSize: 18, color: "white" }} />,
   }];
 
   return (
@@ -43,7 +43,7 @@ function App() {
       <Layout className='mainContainer'>
         <Header style={{ display: 'flex', alignItems: 'center' }}>
           <Menu
-            style={{ marginInlineStart: 0, flex:'auto' }}
+            style={{ marginInlineStart: 0, flex: 'auto' }}
             inlineIndent={0}
             theme="dark"
             mode="horizontal"
@@ -56,17 +56,10 @@ function App() {
             renders the first one that matches the current URL. */}
         <Routes>
           <Route path="/" Component={MainPage} />
-          <Route path="/events/:id" Component={RedemptionPage}>
-          </Route>
-          <Route path="/">
-
-          </Route>
+          <Route path="/events/:id" Component={RedemptionPage} />
         </Routes>
-
       </Layout>
-
     </ConfigProvider>
-
   );
 }
 

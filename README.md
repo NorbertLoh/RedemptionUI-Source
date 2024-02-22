@@ -11,6 +11,7 @@
     <img src="https://img.shields.io/badge/Antd-0170FE?style=for-the-badge&logo=antdesign" alt="antdlogo" />
     <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs" alt="nestjslogo" />
     <img src="https://img.shields.io/badge/Cypress-69D3A7?style=for-the-badge&logo=cypress&logoColor=black" alt="cypress" />
+    <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" alt="nestjslogo" />
     <img src="https://img.shields.io/badge/PostgresSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgsqllogo" />
 </p>
 
@@ -22,7 +23,7 @@
     
 </p>
 
-## Web Service and Database Documentation can be seen [here](https://github.com/NorbertLoh/RedemptionAPI).
+# Web Service and Database Documentation can be seen [here](https://github.com/NorbertLoh/RedemptionAPI).
 
 
 
@@ -105,6 +106,33 @@ describe("Test invalid staff file", () => {
 });
 ```
 
+## Contribution
+If you would like to add or build on top of this project, the important files are stored in the following file structure.
+```
+├── ...
+├── cypress
+│   └── e2e
+│        └── spec.cy.ts
+├── src
+│   ├── pages
+│   │   ├── MainPage.tsx
+│   │   └── index.tsx
+│   ├── index.js
+│   ├── App.tsx
+│   ├── config.ts
+│   └── index.tsx   
+└── ...
+```
+
+## Documentation
+Documentation for technologies used can be found in the following links.
+* [React](https://legacy.reactjs.org/docs/getting-started.html)
+* [ANTD](https://ant.design/components/overview/)
+* [NestJS](https://docs.nestjs.com/)
+* [Cypress](https://www.cypress.io/)
+* [Swagger](https://swagger.io/)
+* [PostgresSQL](https://www.postgresql.org/docs/)
+  
 <p align="center">
   <br />
   <h1 align="center">Hi There! I'm Norbert! &#128075;</h1>
